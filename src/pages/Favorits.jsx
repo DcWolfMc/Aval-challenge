@@ -1,0 +1,5 @@
+export function Favorits(){
+    return(
+        <h1>Favorits</h1>
+    )
+}
