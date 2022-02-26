@@ -1,13 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { ListItem } from "../componensts/ListItem"
-import { SaveRepository } from "../pages/Favorits";
 import saveRepos from "../componensts/SaveRepos";
 const api ={
     baseURL: "https://api.github.com/",
     IdCliente: "c887edd04d5139ad5612",
     ClienteSecret: "79cf73d6d67850ed916e0426deb7a5ef898341f4"
 }
+
 
 export function useRepository(user){
     const url = `${api.baseURL}users/${user}/repos`;
@@ -25,7 +25,7 @@ export const RepositoryList = (list)=>{
     let myList = list.map((repository)=>{
         
         return(
-            <ul key={repository.id}>
+            <ul className="repository-card" key={repository.id} >
                 <div><button >favoritar</button></div>
                 <div>
                     <ListItem className="Repository-title" title="Title:" item={ repository.name } />
@@ -63,14 +63,17 @@ export const ApiRepository = (props) =>{
         }
         console.log(repository)
         return(
-            <ul key={repository.id}>
-                <div><button onClick={handleSave}>FAVORITAR</button></div>
-                <div>
+            <ul className="repository-card" key={repository.id}>
+                <div className="repository-card-header">
                     <ListItem className="Repository-title" title="Title:" item={ repository.name } />
+                    <button className="favorits-btn"onClick={handleSave}>FAVORITAR</button></div>
+                <div className="repository-card-body">
                     <ListItem className="Repository-owner" title="Owner:" item={ repository.owner.login }/>
                     <ListItem className="Repository-stars" title="Stars:" item={ repository.stargazers_count }/>
                     <ListItem className="Repository-forks" title="Forks:" item={ repository.forks_count }/>
-                    <ListItem className="Repository-description" title="" item={ repository.description }/>
+                    <div className="repository-card-description">
+                        <ListItem className="Repository-description" title="" item={ repository.description }/>
+                    </div>
                 </div>
             </ul>
         );

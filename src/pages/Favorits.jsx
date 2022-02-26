@@ -22,16 +22,20 @@ export function Favorits(){
             }
             console.log(repository)
             return(
-                <ul key={repository.id}>
-                    <div><button onClick={()=> handleDelete(repository)}>Desfavoritar</button></div>
-                    <div>
-                        <ListItem className="Repository-title" title="Title:" item={ repository.name } />
-                        <ListItem className="Repository-owner" title="Owner:" item={ repository.owner.login }/>
-                        <ListItem className="Repository-stars" title="Stars:" item={ repository.stargazers_count }/>
-                        <ListItem className="Repository-forks" title="Forks:" item={ repository.forks_count }/>
+                <ul className="repository-card" key={repository.id}>
+                <div className="repository-card-header">
+                    <ListItem className="Repository-title" title="Title:" item={ repository.name } />
+                    <button onClick={()=> handleDelete(repository)}>Desfavoritar</button>
+                </div>
+                <div className="repository-card-body">
+                    <ListItem className="Repository-owner" title="Owner:" item={ repository.owner.login }/>
+                    <ListItem className="Repository-stars" title="Stars:" item={ repository.stargazers_count }/>
+                    <ListItem className="Repository-forks" title="Forks:" item={ repository.forks_count }/>
+                    <div className="repository-card-description">
                         <ListItem className="Repository-description" title="" item={ repository.description }/>
                     </div>
-                </ul>
+                </div>
+            </ul>
             );
         })
         setFavoritsList(MyFavorits)
@@ -41,7 +45,7 @@ export function Favorits(){
     return(
         <>
         <button onClick={() => navigate("/")}>Back</button>
-        <div>{favoritsList}</div>
+        <div className="list-body">{favoritsList}</div>
         </>
     )
 }
