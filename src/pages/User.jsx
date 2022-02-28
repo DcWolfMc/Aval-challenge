@@ -13,6 +13,6 @@ export function User(){
 export function NoUser(){
     const { user } = useParams();
     return(
-    <div>Sorry but {user} does not exist.</div>
+    <div></div>
     )
 }

@@ -25,7 +25,7 @@ export function Favorits(){
                 <ul className="repository-card" key={repository.id}>
                 <div className="repository-card-header">
                     <ListItem className="Repository-title" title="Title:" item={ repository.name } />
-                    <button onClick={()=> handleDelete(repository)}>Desfavoritar</button>
+                    <i className="trash-image bi bi-trash-fill" onClick={()=> handleDelete()}></i>
                 </div>
                 <div className="repository-card-body">
                     <ListItem className="Repository-owner" title="Owner:" item={ repository.owner.login }/>

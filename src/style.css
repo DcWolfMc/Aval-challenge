@@ -46,7 +46,6 @@ body{
 }
 .list-form .search-elements button:hover{
   border-color: #4c5157;
-  
   outline: none;
 }
 .list-form .search-elements input:hover{
@@ -84,12 +83,44 @@ body{
   width: 80vw;
   border: 5px;
   padding: 15px;
+  margin: 1rem 0;
   list-style-type:none;
   background-color: #161b22;
   border-color: #30363d;
   border-style: solid;
   border-width: 1px;
   border-radius: 6px;
+}
+.star-image{
+  font-size: 20px;
+  color: #30363d;
+}
+.star-image:hover{
+  cursor: pointer;
+}
+.star-clicked-image{
+  font-size: 20px;
+  color: #fce72c;
+}
+.star-clicked-image:disabled{
+  font-size: 20px;
+  color: #fce72c;
+  
+}
+.star-clicked-image:hover{
+  cursor: pointer;
+}
+.trash-image{
+  font-size: 20px;
+  color: #b82020;
+}
+.trash-image:hover{
+  cursor: pointer;
+  color: #f82e2e;
+}
+.trash-image:active{
+  font-size: 20px;
+  color: #ff7474;
 }
 .repository-card-header{
   display: flex;

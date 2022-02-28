@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useRepository, RepositoryList, ApiRepository } from "../API/Github";
+import { ApiRepository } from "../API/Github";
 import {Outlet, useNavigate } from "react-router-dom";
 export function List(){
 
