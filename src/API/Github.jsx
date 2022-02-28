@@ -10,38 +10,6 @@ const api ={
     ClienteSecret: "79cf73d6d67850ed916e0426deb7a5ef898341f4"
 }
 
-/*
-export function useRepository(user){
-    const url = `${api.baseURL}users/${user}/repos`;
-    const [reposList, setReposList] = useState([]);
-    axios.get(url).then( (response) => {
-                if(response.data != []){
-                    setReposList(response.data)
-                    console.log("dentro do if")
-                }
-                return reposList
-            });
-}
-
-export const RepositoryList = (list)=>{
-    let myList = list.map((repository)=>{
-        
-        return(
-            <ul className="repository-card" key={repository.id} >
-                <div><button >favoritar</button></div>
-                <div>
-                    <ListItem className="Repository-title" title="Title:" item={ repository.name } />
-                    <ListItem className="Repository-owner" title="Owner:" item={ repository.owner.login }/>
-                    <ListItem className="Repository-stars" title="Stars:" item={ repository.stargazers_count }/>
-                    <ListItem className="Repository-forks" title="Forks:" item={ repository.forks_count }/>
-                    <ListItem className="Repository-description" title="" item={ repository.description }/>
-                </div>
-            </ul>
-        );
-    })
-    return {myList}
-}*/
-
 export const ApiRepository = (props) =>{
     const url = `${api.baseURL}users/${props.user}/repos`;
     console.log(url);

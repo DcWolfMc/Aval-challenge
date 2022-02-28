@@ -1,23 +1,20 @@
-import { useState,useEffect } from "react";
-import styled from "styled-components";
+import { useState } from "react";
 import  saveRepos from "../SaveRepos"
 export const Star = (props) =>{
     
     const repository = props.repository;
     const [className, setClassName] = useState("star-image bi bi-star")
-    /*if(saveRepos.find(()=>repository.id)){
-        setClassName("star-clicked-image bi bi-star-fill")
-    }*/
+    
     const handleSave =() =>{
         if(!saveRepos.find((r)=>r.id === repository.id)){
             saveRepos.push(repository)
             console.log(saveRepos)
             setClassName("star-clicked-image bi bi-star-fill")
-        }else{
-            let index = saveRepos.indexOf(repository);
+        }else if(saveRepos.find((r)=>r.id === repository.id)){
+            /*let index = saveRepos.indexOf(repository.id);
             saveRepos.splice(index,1);
-            console.log(saveRepos);
-            setClassName("star-image bi bi-star")
+            console.log(saveRepos);*/
+            //setClassName("star-image bi bi-star")
         }
         
     }
@@ -27,5 +24,5 @@ export const Star = (props) =>{
         }
     }
     
-    return<i className={className} onClick={handleSave} onMouseOver={ handlehover }></i>
+    return<i className={className} onClick={handleSave} onMouseOver={handlehover}></i>
 }
